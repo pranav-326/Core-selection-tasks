@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact - REST Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <main class="container">
+    <a href="index.html" class="back">← Back</a>
+    <h1>Contact</h1>
+
+    <section>
+      <h2>Learning objectives</h2>
+      <ul>
+        <li>Provide contact info for follow-ups</li>
+      </ul>
+    </section>
+
+    <section>
+      <form id="contact-form">
+        <label>
+          Your name
+          <input name="name" required />
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send</button>
+        </div>
+      </form>
+      <p class="muted">This is a demo form - it will open your email client as a fallback.</p>
+    </section>
+  </main>
+
+  <script type="module">
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target));
+      const mailto = `mailto:hello@example.com?subject=Workshop%20Contact%20from%20${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message + '\n\n' + data.email)}`;
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>

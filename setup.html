@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Setup - REST Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">REST Workshop</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Setup</h1>
+
+    <section>
+      <h2>Learning objectives</h2>
+      <ul>
+        <li>Install Node & npm</li>
+        <li>Run `json-server` mock API</li>
+        <li>Serve static site locally</li>
+        <li>Use Postman or browser devtools to inspect requests</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>Node.js & npm (LTS recommended)</li>
+        <li>VS Code (optional)</li>
+        <li>Postman or HTTP client (optional)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Commands</h2>
+      <pre><code>npm install
+npm run mock-api
+npm run dev</code></pre>
+
+      <p>Open <code>http://localhost:5000</code> for the site and <code>http://localhost:3001/posts</code> for the API.</p>
+
+      <p>Switching to JSONPlaceholder (external API):</p>
+      <ol>
+        <li>Edit `js/config.js` and set:
+          <pre><code>export const API_BASE = 'https://jsonplaceholder.typicode.com';
+export const USE_MOCK = false;</code></pre>
+        </li>
+        <li>Reload `demo.html`. Note: POST/PUT requests to JSONPlaceholder are simulated and not persisted.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Postman Quick Example</h2>
+      <p>GET posts:</p>
+      <pre><code>GET http://localhost:3001/posts</code></pre>
+      <p>POST example body (JSON):</p>
+      <pre><code>{
+  "title": "Hello",
+  "body": "Workshop post body",
+  "userId": 1
+}</code></pre>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 REST Workshop</p>
+    </div>
+  </footer>
+</body>
+</html>

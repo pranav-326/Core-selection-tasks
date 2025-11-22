@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Syllabus - REST Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">REST Workshop</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="demo.html" class="cta">Demo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Syllabus</h1>
+
+    <section>
+      <h2>Learning objectives</h2>
+      <ul>
+        <li>Explain REST, HTTP verbs and status codes</li>
+        <li>Implement robust fetch flows with retries</li>
+        <li>Perform CRUD operations against a mock API</li>
+        <li>Manage Authorization headers and tokens</li>
+        <li>Explain and remediate CORS issues</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Schedule (approx)</h2>
+      <ol class="schedule">
+        <li><strong>0–10m:</strong> Intro, goals, environment</li>
+        <li><strong>10–25m:</strong> REST basics and Postman demo - <a href="lessons/rest-basics.html">rest-basics</a></li>
+        <li><strong>25–40m:</strong> json-server setup and data modeling - <a href="lessons/mock-api-and-setup.html">mock-api-and-setup</a></li>
+        <li><strong>40–60m:</strong> Read/Create flows (GET/POST) - <a href="lessons/read.html">read</a>, <a href="lessons/create.html">create</a></li>
+        <li><strong>60–85m:</strong> Update & Delete (PUT/PATCH/DELETE) - <a href="lessons/update.html">update</a>, <a href="lessons/delete.html">delete</a></li>
+        <li><strong>85–100m:</strong> Auth, external APIs, CORS - <a href="lessons/auth-and-external.html">auth-and-external</a></li>
+        <li><strong>100–120m:</strong> Error handling, retries, optimistic updates - <a href="lessons/error-handling.html">error-handling</a></li>
+        <li><strong>120m+:</strong> Demo, Q&A, deployment (GitHub Pages / Vercel / Netlify)</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Materials</h2>
+      <p>Use the interactive <a href="demo.html">demo</a> and the `db.json` mock API for hands-on practice.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 REST Workshop</p>
+    </div>
+  </footer>
+</body>
+</html>

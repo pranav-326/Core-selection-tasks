@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Error Handling - REST Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <main class="container">
+    <a href="../index.html" class="back">← Back</a>
+    <h1>Error handling, Retries & CORS</h1>
+
+    <section>
+      <h2>Learning objectives</h2>
+      <ul>
+        <li>Handle non-2xx responses consistently</li>
+        <li>Implement retries with exponential backoff for idempotent calls</li>
+        <li>Understand CORS and strategies to avoid it in development</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Retries (exponential backoff)</h2>
+      <pre><code>fetchWithRetry(url, options = {}, retries = 3)</code></pre>
+      <p>See `js/lib/retry.js` for a full implementation and usage example.</p>
+    </section>
+
+    <section>
+      <h2>CORS explained</h2>
+      <p>CORS (Cross-Origin Resource Sharing) is a browser security feature that restricts requests from one origin to another unless the server permits it via response headers (e.g., <code>Access-Control-Allow-Origin</code>).</p>
+
+      <h3>How to fix CORS during development</h3>
+      <ul>
+        <li>Configure server to include CORS headers (for json-server use middleware)</li>
+        <li>Run mock API and site on same host/port (or serve via proxy)</li>
+        <li>Use a server-side proxy when deploying (Netlify functions, Vercel serverless, or custom proxy)</li>
+      </ul>
+
+      <p>json-server example with middleware (see <code>lessons/mock-api-and-setup.html</code>).</p>
+    </section>
+  </main>
+</body>
+</html>

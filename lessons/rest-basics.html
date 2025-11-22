@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>REST Basics - REST Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <main class="container">
+    <a href="../index.html" class="back">← Back</a>
+    <h1>REST & HTTP Basics</h1>
+
+    <section>
+      <h2>Learning objectives</h2>
+      <ul>
+        <li>Describe HTTP verbs: GET, POST, PUT/PATCH, DELETE</li>
+        <li>Interpret common HTTP status codes</li>
+        <li>Use Postman to test endpoints</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick reference</h2>
+      <dl>
+        <dt>GET</dt><dd>Read resources</dd>
+        <dt>POST</dt><dd>Create resources</dd>
+        <dt>PUT / PATCH</dt><dd>Update resources (PUT = replace, PATCH = partial)</dd>
+        <dt>DELETE</dt><dd>Remove resources</dd>
+      </dl>
+
+      <h3>Common status codes</h3>
+      <ul>
+        <li><strong>200</strong> OK</li>
+        <li><strong>201</strong> Created</li>
+        <li><strong>204</strong> No Content</li>
+        <li><strong>400</strong> Bad Request</li>
+        <li><strong>401</strong> Unauthorized</li>
+        <li><strong>403</strong> Forbidden</li>
+        <li><strong>404</strong> Not Found</li>
+        <li><strong>500</strong> Server Error</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Postman example</h2>
+      <p>Send a GET to <code>http://localhost:3001/posts</code> and inspect headers, response, and status code.</p>
+    </section>
+
+    <section>
+      <h2>Code example (fetch vs XHR)</h2>
+      <pre><code>// fetch example
+fetch('/posts')
+  .then(r => r.json())
+  .then(data => console.log(data));
+
+// XHR fallback
+const xhr = new XMLHttpRequest();
+xhr.open('GET', '/posts');
+xhr.onload = () => console.log(JSON.parse(xhr.responseText));
+xhr.send();</code></pre>
+    </section>
+  </main>
+</body>
+</html>

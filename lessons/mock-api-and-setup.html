@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mock API & Setup - REST Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <main class="container">
+    <a href="../index.html" class="back">← Back</a>
+    <h1>Mock API & json-server</h1>
+
+    <section>
+      <h2>Learning objectives</h2>
+      <ul>
+        <li>Understand `db.json` shape</li>
+        <li>Run `json-server` and inspect endpoints</li>
+        <li>Customize `json-server` options like `--port`</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>db.json explained</h2>
+      <p>Collections in `db.json` become RESTful endpoints:</p>
+      <ul>
+        <li>`/posts` - array of post objects</li>
+        <li>`/users` - users</li>
+        <li>`/comments` - comments</li>
+      </ul>
+      <p>Examples:</p>
+      <pre><code>GET /posts
+POST /posts
+GET /posts/:id
+PUT /posts/:id
+DELETE /posts/:id</code></pre>
+    </section>
+
+    <section>
+      <h2>Custom options</h2>
+      <p>Run on a different port:</p>
+      <pre><code>json-server --watch db.json --port 3001</code></pre>
+
+      <p>Add simple middleware (CORS or auth simulation):</p>
+      <pre><code>// server.js (example)
+// const jsonServer = require('json-server')
+// const server = jsonServer.create()
+// const router = jsonServer.router('db.json')
+// const middlewares = jsonServer.defaults()
+// server.use((req, res, next) => {
+//   // Simple auth simulation
+//   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+//     next()
+//   } else {
+//     // allow public GETs
+//     if (req.method === 'GET') next()
+//     else res.sendStatus(401)
+//   }
+// })
+// server.use(middlewares)
+// server.use(router)
+// server.listen(3001)</code></pre>
+    </section>
+  </main>
+</body>
+</html>

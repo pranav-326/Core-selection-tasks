@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Demo - REST Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">REST Workshop</a>
+      <nav aria-label="Demo navigation">
+        <ul class="nav">
+          <li><a href="lessons/read.html">Lessons</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container demo">
+    <h1>Interactive CRUD Demo</h1>
+
+    <section class="controls">
+      <div class="switch-row">
+        <label>
+          <input id="api-toggle" type="checkbox" aria-checked="true" />
+          Use external API (JSONPlaceholder)
+        </label>
+        <button id="login-btn" class="btn">Fake Login</button>
+      </div>
+
+      <div id="banner" role="status" aria-live="polite" class="banner hidden"></div>
+    </section>
+
+    <section class="create card">
+      <h2>Create a Post</h2>
+      <form id="create-form">
+        <label>
+          Title
+          <input id="create-title" name="title" required />
+        </label>
+        <label>
+          Body
+          <textarea id="create-body" name="body" rows="3" required></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Create</button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <h2>Posts</h2>
+      <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
+      <div id="posts" class="grid posts-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Modal for edit -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-inner">
+      <button id="modal-close" class="modal-close" aria-label="Close">×</button>
+      <h3 id="modal-title">Edit Post</h3>
+      <form id="edit-form">
+        <label>
+          Title
+          <input id="edit-title" name="title" required />
+        </label>
+        <label>
+          Body
+          <textarea id="edit-body" name="body" rows="3" required></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn" type="button" id="cancel-edit">Cancel</button>
+          <button class="btn primary" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 REST Workshop</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app/demo.js"></script>
+</body>
+</html>

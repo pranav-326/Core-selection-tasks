@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Workshop: REST APIs (Vanilla)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">REST Workshop - Vanilla</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav">
+          <li><a href="syllabus.html">Syllabus</a></li>
+          <li><a href="setup.html">Setup</a></li>
+          <li><a href="demo.html" class="cta">Start Workshop</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="hero">
+      <h1>Hands-on REST API Workshop - Vanilla Web</h1>
+      <p class="lead">Learn practical REST skills (CRUD, auth, CORS, retries, optimistic updates) using only HTML, CSS and modular ES6 JavaScript.</p>
+      <ul class="objectives">
+        <li><strong>Understand</strong> HTTP verbs and status codes</li>
+        <li><strong>Implement</strong> resilient fetch logic with retries</li>
+        <li><strong>Perform</strong> CRUD against a mock API and external APIs</li>
+        <li><strong>Handle</strong> auth headers, CORS and optimistic updates</li>
+      </ul>
+      <p><a class="btn primary" href="demo.html">Start Workshop - Interactive Demo</a></p>
+    </section>
+
+    <section class="grid two-up">
+      <article class="card">
+        <h2>What you'll build</h2>
+        <p>Hands-on demo with posts, create/edit/delete flows, optimistic updates, and a fake login to demonstrate token-based Authorization headers.</p>
+        <a class="btn" href="lessons/rest-basics.html">Learn REST basics</a>
+      </article>
+
+      <article class="card">
+        <h2>Quick setup</h2>
+        <p>Run a local mock API with `json-server` and serve the site with `serve` (both included as dev dependencies).</p>
+        <a class="btn" href="setup.html">Setup instructions</a>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Schedule</h2>
+      <p>This self-guided workshop includes short lessons and an interactive demo. See the <a href="syllabus.html">syllabus</a> for a minute-by-minute plan.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 REST Workshop • <a href="resources.html">Resources</a> • <a href="contact.html">Contact</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app/main.js"></script>
+</body>
+</html>

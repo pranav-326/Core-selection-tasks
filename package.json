@@ -1,0 +1,27 @@
+{
+  "name": "workshop-rest-vanilla",
+  "version": "1.0.0",
+  "description": "A vanilla HTML/CSS/JS workshop project teaching REST API handling (CRUD, auth, CORS, retries, optimistic updates).",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve -s . -l 5000",
+    "mock-api": "json-server --watch db.json --port 3001",
+    "start": "concurrently \"npm run mock-api\" \"npm run dev\"",
+    "lint:css": "stylelint \"styles/**/*.css\" || true"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "vanilla",
+    "workshop",
+    "json-server"
+  ],
+  "author": "Workshop Author",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "json-server": "^0.17.3",
+    "serve": "^14.1.2",
+    "stylelint": "^15.0.0"
+  }
+}

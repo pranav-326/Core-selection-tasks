@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Auth & External APIs - REST Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <main class="container">
+    <a href="../index.html" class="back">← Back</a>
+    <h1>Auth & External APIs</h1>
+
+    <section>
+      <h2>Learning objectives</h2>
+      <ul>
+        <li>Simulate token-based auth and attach `Authorization` header</li>
+        <li>Integrate external APIs (JSONPlaceholder)</li>
+        <li>Understand limitations of public mock APIs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Attach auth token</h2>
+      <pre><code>function attachAuthToken(headers = {}) {
+  const token = localStorage.getItem('auth_token');
+  if (token) headers['Authorization'] = 'Bearer ' + token;
+  return headers;
+}</code></pre>
+
+      <p>Example usage:</p>
+      <pre><code>fetch(`${API_BASE}/posts`, {
+  method: 'GET',
+  headers: attachAuthToken({ 'Content-Type': 'application/json' })
+})</code></pre>
+    </section>
+
+    <section>
+      <h2>External API (JSONPlaceholder)</h2>
+      <p>Switch `API_BASE` to <code>https://jsonplaceholder.typicode.com</code> for external testing. Caveats:</p>
+      <ul>
+        <li>POST/PUT/PATCH are faked and won't persist long-term</li>
+        <li>Auth headers are ignored by JSONPlaceholder</li>
+        <li>Rate limits or differences in response shape possible</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

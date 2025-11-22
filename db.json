@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome to the REST Workshop",
+      "body": "This is a sample post used to demonstrate CRUD operations with a mock API.",
+      "userId": 1,
+      "createdAt": "2025-11-22T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Second post - optimistic delete demo",
+      "body": "Try deleting this item in the demo to see optimistic updates and rollback.",
+      "userId": 2,
+      "createdAt": "2025-11-21T09:30:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "email": "alice@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "email": "bob@example.com"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "postId": 1,
+      "body": "Great workshop!",
+      "userId": 2
+    }
+  ]
+}

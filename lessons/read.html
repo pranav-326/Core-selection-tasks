@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Read (GET) - REST Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <main class="container">
+    <a href="../index.html" class="back">← Back</a>
+    <h1>Read: GET Requests</h1>
+
+    <section>
+      <h2>Learning objectives</h2>
+      <ul>
+        <li>Write GET requests using `fetch`</li>
+        <li>Parse JSON and handle non-2xx responses</li>
+        <li>Use `fetchWithRetry` for idempotent reads</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Example: fetchPosts()</h2>
+      <pre><code>async function fetchPosts() {
+  // fetch example
+  const res = await fetch(`${API_BASE}/posts`);
+  if (!res.ok) throw new Error('Failed to fetch posts: ' + res.status);
+  const data = await res.json();
+  return data;
+}
+
+// XHR fallback
+function fetchPostsXHR(cb) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `${API_BASE}/posts`);
+  xhr.onload = () => cb(null, JSON.parse(xhr.responseText));
+  xhr.onerror = () => cb(new Error('Network error'));
+  xhr.send();
+}</code></pre>
+
+      <p>PRO TIP: Use `fetchWithRetry` for unstable networks - see `js/lib/retry.js`</p>
+    </section>
+  </main>
+</body>
+</html>

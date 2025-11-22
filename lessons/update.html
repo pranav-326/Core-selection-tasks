@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Update (PUT/PATCH) - REST Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <main class="container">
+    <a href="../index.html" class="back">← Back</a>
+    <h1>Update: PUT & PATCH</h1>
+
+    <section>
+      <h2>Learning objectives</h2>
+      <ul>
+        <li>Differentiate PUT vs PATCH</li>
+        <li>Implement edit flows and optimistic UI patterns</li>
+        <li>Validate inputs before updating</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Examples</h2>
+      <pre><code>// PUT (replace entire resource)
+async function updatePost(id, payload) {
+  const res = await fetch(`${API_BASE}/posts/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  if (!res.ok) throw new Error('Update failed: ' + res.status);
+  return res.json();
+}
+
+// PATCH (partial)
+async function patchPost(id, patch) {
+  const res = await fetch(`${API_BASE}/posts/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(patch)
+  });
+  if (!res.ok) throw new Error('Patch failed: ' + res.status);
+  return res.json();
+}</code></pre>
+    </section>
+  </main>
+</body>
+</html>
